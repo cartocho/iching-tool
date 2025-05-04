@@ -1,13 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
     const appDiv = document.getElementById("app");
-    fetch("hexagrams.json")
-        .then(response => response.json())
-        .then(data => {
-            appDiv.innerHTML = "<p>La herramienta está lista para funcionar.</p>";
-            console.log("Hexagramas cargados:", data);
-        })
-        .catch(error => {
-            appDiv.innerHTML = "<p>Error al cargar hexagramas.</p>";
-            console.error("Error al cargar hexagramas:", error);
-        });
+
+    // Datos de los hexagramas (directamente en el archivo para evitar problemas con JSON)
+    const hexagrams = [
+        {
+            id: 1,
+            name: "El Creativo",
+            description: "Cielo puro y creativo."
+        },
+        {
+            id: 2,
+            name: "Lo Receptivo",
+            description: "Tierra pura y receptiva."
+        }
+    ];
+
+    // Mostrar los hexagramas en la página
+    hexagrams.forEach(hexagram => {
+        const hexagramDiv = document.createElement("div");
+        hexagramDiv.innerHTML = `<h2>${hexagram.name}</h2><p>${hexagram.description}</p>`;
+        appDiv.appendChild(hexagramDiv);
+    });
 });

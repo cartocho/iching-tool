@@ -9,3 +9,11 @@ body {
 h1 {
     color: #444;
 }
+
+#app div {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
